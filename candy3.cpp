@@ -1,19 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int f(int n){
-	if(n==1) return 1;
-	else{
-		int ret=0;
-		for(int i=1; i<=sqrt(n); i++){
-			if(n%i==0) ret++;
-		}
-		return ret+f(n-1);
-	}
-}
-
 int main(){
-	int n;
-	cin >> n;
-	cout << f(n) << endl;
+	long long int N,a,n,sum;
+	cin >> N;
+	while(N!=0){
+		N--;
+		cin >> n;
+		sum=0;
+		for(int i=0; i<n; i++){
+			cin >> a;
+			sum=(sum+a)%n;
+		}
+		if(sum % n == 0) cout << "YES" << endl;
+		else cout << "NO" << endl;
+	}
 }
